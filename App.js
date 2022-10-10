@@ -5,9 +5,29 @@ import Child from "./Child";
 class App extends React.Component {
   constructor() {
     super();
+    console.log('Constructor called....')
     this.state = {
       counter: 0
     }
+  }
+
+  static getDerivedStateFromProps() {
+    console.log('Get derived  state from props called....')
+    return null;
+  }
+
+  componentDidMount(){
+    console.log('Component Did mount');
+  }
+
+  shouldComponentUpdate() {
+    console.log('should component update');
+    return true;
+  }
+
+  getSnapshotBeforeUpdate(){
+    console.log('get snapshot before update');
+    return null;
   }
 
   increment = () => {
@@ -17,13 +37,21 @@ class App extends React.Component {
     } 
   }
 
+  componentDidUpdate(){
+    console.log('Component did update');
+  }
+
+  componentWillUnmount(){
+    console.log('Component will unmount');
+  }
+
   decrement = () => {
     if(this.state.counter>0)
     {
     this.setState({ counter: this.state.counter - 1 })
     }
   }
-  
+
   reset  = () =>  {
     this.setState({counter:0})
   }
@@ -59,16 +87,6 @@ class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  counterValue: {
-    textAlign: "center",
-    fontSize: 120,
-    margin: 100,
-    backgroundColor: 'gray',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 200,
-    height: 150
-  },
   incrementButton: {
     borderRadius:25,
     marginTop:60,
@@ -105,7 +123,6 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline'
   },
   resetButton:{
-
     borderRadius:8,
     marginLeft : 175,
     marginTop:50,
