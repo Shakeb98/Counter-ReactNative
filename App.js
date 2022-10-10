@@ -7,7 +7,8 @@ class App extends React.Component {
     super();
     this.state = {
       counter: 0,
-      name:''
+      name:'',
+      class:''
     }
   }
 
