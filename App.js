@@ -3,61 +3,61 @@ import { View, SafeAreaView, Text, Button, StyleSheet, TouchableOpacity } from "
 import Child from "./Child";
 
 class App extends React.Component {
+
   constructor() {
     super();
-    console.log('Constructor called....')
+    console.log('Constructor is called  when component is  initiated  and set up the initial value')
     this.state = {
       counter: 0
     }
   }
 
+
   static getDerivedStateFromProps() {
-    console.log('Get derived  state from props called....')
+    console.log('This method is called right before rendering the element in Dom')
     return null;
   }
 
-  componentDidMount(){
-    console.log('Component Did mount');
+  componentDidMount() {
+    console.log('This method is called after component is rendered');
   }
 
   shouldComponentUpdate() {
-    console.log('should component update');
+    console.log('This method returns a Boolean value that specifies whether React should continue with the rendering or not.');
     return true;
   }
 
-  getSnapshotBeforeUpdate(){
-    console.log('get snapshot before update');
+  getSnapshotBeforeUpdate() {
+    console.log('After upadation,In this method we can check what the values were before the update.');
     return null;
   }
 
   increment = () => {
-    if(this.state.counter <10)
-    {
-    this.setState({ counter: this.state.counter + 1 })
-    } 
-  }
-
-  componentDidUpdate(){
-    console.log('Component did update');
-  }
-
-  componentWillUnmount(){
-    console.log('Component will unmount');
-  }
-
-  decrement = () => {
-    if(this.state.counter>0)
-    {
-    this.setState({ counter: this.state.counter - 1 })
+    if (this.state.counter < 10) {
+      this.setState({ counter: this.state.counter + 1 })
     }
   }
 
-  reset  = () =>  {
-    this.setState({counter:0})
+  componentDidUpdate() {
+    console.log('This Method is called after the component is updated in the Dom');
+  }
+
+  componentWillUnmount() {
+    console.log('The componentWillUnmount method is called when the component is about to be removed from the Dom');
+  }
+
+  decrement = () => {
+    if (this.state.counter > 0) {
+      this.setState({ counter: this.state.counter - 1 })
+    }
+  }
+
+  reset = () => {
+    this.setState({ counter: 0 })
   }
 
   render() {
-    console.log('render');
+    console.log('This method is required, and is the method that actually outputs the HTML to the Dom');
     return (
       <SafeAreaView>
         <Text style={styles.Name}>Counter Application</Text>
@@ -68,16 +68,16 @@ class App extends React.Component {
             </View>
           </TouchableOpacity>
 
-          <Child counter = {this.state.counter}/>
+          <Child counter={this.state.counter} />
 
           <TouchableOpacity onPress={this.decrement}>
             <View style={styles.decrementButton}>
               <Text style={styles.decrementIcon}>-</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress = {this.reset}>
+          <TouchableOpacity onPress={this.reset}>
             <View>
-              <Text style ={styles.resetButton}>Reset</Text>
+              <Text style={styles.resetButton}>Reset</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -88,8 +88,8 @@ class App extends React.Component {
 
 const styles = StyleSheet.create({
   incrementButton: {
-    borderRadius:25,
-    marginTop:60,
+    borderRadius: 25,
+    marginTop: 60,
     justifyContent: 'center',
     alignItems: 'center',
     width: 150,
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     padding: 0
   },
   decrementButton: {
-    borderRadius:25,
+    borderRadius: 25,
     alignItems: 'center',
     width: 150,
     backgroundColor: 'red',
@@ -107,27 +107,27 @@ const styles = StyleSheet.create({
     height: 100,
     padding: 0
   },
-  incrementIcon:{
-    fontSize:50
+  incrementIcon: {
+    fontSize: 50
   },
-  decrementIcon:{
-    marginTop:5,
-    padding:10,
-    fontSize:50
+  decrementIcon: {
+    marginTop: 5,
+    padding: 10,
+    fontSize: 50
   },
-  Name:{
-    marginTop:30,
-    marginLeft:60,
-    fontSize:30,
-    fontWeight:'bold',
+  Name: {
+    marginTop: 30,
+    marginLeft: 60,
+    fontSize: 30,
+    fontWeight: 'bold',
     textDecorationLine: 'underline'
   },
-  resetButton:{
-    borderRadius:8,
-    marginLeft : 175,
-    marginTop:50,
-    fontSize:20,
-    fontWeight:'bold',
+  resetButton: {
+    borderRadius: 8,
+    marginLeft: 175,
+    marginTop: 50,
+    fontSize: 20,
+    fontWeight: 'bold',
     textDecorationLine: 'underline'
   }
 });
