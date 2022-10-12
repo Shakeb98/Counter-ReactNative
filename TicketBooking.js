@@ -192,7 +192,8 @@ const styles = StyleSheet.create({
         color: 'white',
         padding: 13,
         marginLeft: 110,
-        fontSize: 20
+        fontSize: 20,
+        fontWeight: 'bold'
     },
     content: {
         top: 25,
@@ -204,7 +205,7 @@ const styles = StyleSheet.create({
         width: 150,
         marginRight: 20,
         borderWidth:1,
-        borderRadius:10,
+        borderRadius:5,
         resizeMode: 'stretch',
         borderColor: 'black'
     },
