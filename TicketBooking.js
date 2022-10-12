@@ -2,6 +2,9 @@ import { Text, View, SafeAreaView, TextInput, ScrollView, TouchableOpacity, Imag
 import React, { Component } from 'react'
 
 export class TicketBooking extends Component {
+    paymentModeAlert = () => {
+        alert('Please select payment mode')
+    }
     render() {
         return (
             <SafeAreaView style={styles.fullScreen}>
@@ -74,7 +77,7 @@ export class TicketBooking extends Component {
                 </ScrollView>
 
                 <View style={styles.ticketButton}>
-                    <TouchableOpacity style={styles.buyTicketButton}>
+                    <TouchableOpacity style={styles.buyTicketButton} onPress={this.paymentModeAlert}>
                         <Text style={styles.buyTicketButtonText}>
                             BUY TICKET
                         </Text>
@@ -188,7 +191,7 @@ const styles = StyleSheet.create({
     buyTicketButtonText: {
         color: 'white',
         padding: 13,
-        marginLeft: 120,
+        marginLeft: 110,
         fontSize: 20
     },
     content: {
