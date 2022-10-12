@@ -18,8 +18,11 @@ export class LoginPage extends Component {
                         </Text>
                     </TouchableOpacity>
                     <TextInput style={styles.EmailInput} placeholder="Email or Phone" />
-                    <TextInput style={styles.PasswordInput} placeholder="Password" />
+                    <TextInput style={styles.PasswordInput} secureTextEntry={true}  placeholder="Password" />
 
+                    <TouchableOpacity onclick="">
+                        <Image style={styles.eyeLogo} resizeMode={'contain'} source={require('/Users/shakeebkhan/Desktop/AwesomeProject/action-hide-password.png')} />
+                    </TouchableOpacity>
                     <TouchableOpacity>
                         <View style={styles.forgotPassword}>
                             <Text style={styles.forgotPasswordText}>
@@ -191,6 +194,12 @@ const styles = StyleSheet.create({
     },
     orSection:{
         top:10
+    },
+    eyeLogo:{
+        width:25,
+        height:25,
+        bottom:52,
+        marginLeft:315
     }
 })
 export default LoginPage
