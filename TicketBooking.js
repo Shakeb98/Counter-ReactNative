@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
         height: 350,
         marginBottom: 50,
         border: 0,
-        borderRadius:20,
+        borderRadius: 20,
         resizeMode: 'stretch',
     },
     titleText: {
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     part: {
-        top:6,
+        top: 6,
         textAlign: 'center',
     },
     movieType: {
@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
         height: 50,
         width: 350,
         overflow: 'hidden',
-        top:20
+        top: 20
     },
     buyTicketButtonText: {
         color: 'white',
@@ -204,8 +204,8 @@ const styles = StyleSheet.create({
         height: 200,
         width: 150,
         marginRight: 20,
-        borderWidth:1,
-        borderRadius:5,
+        borderWidth: 1,
+        borderRadius: 5,
         resizeMode: 'stretch',
         borderColor: 'black'
     },
@@ -230,10 +230,10 @@ const styles = StyleSheet.create({
     imageDrag: {
         top: 75
     },
-    ticketButton:{
-        width:'100%',
-        height:'20%',
-        backgroundColor:'rgb(248,249,252)',
+    ticketButton: {
+        width: '100%',
+        height: '20%',
+        backgroundColor: 'rgb(248,249,252)',
         bottom: 60,
     }
 })
