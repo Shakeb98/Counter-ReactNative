@@ -37,10 +37,9 @@ export class OtpScreen extends Component {
                                 alert('You need to enter otp')
                             }
                             if (this.state.pin1 != null && (nativeEvent.key == 1 || nativeEvent.key == 2 || nativeEvent.key == 3 || nativeEvent.key == 4 || nativeEvent.key == 5 || nativeEvent.key == 6 || nativeEvent.key == 7 || nativeEvent.key == 8 || nativeEvent.key == 9 || nativeEvent.key == 0)) {
-                                this.refs.pin2ref.focus()                                
+                                this.refs.pin2ref.focus()
                             }
                         }}
-                        value={this.state.pin1}
                         style={styles.input}
                         maxLength={1}
                         autoFocus={true}>
@@ -60,20 +59,18 @@ export class OtpScreen extends Component {
                         }}
                         onKeyPress={({ nativeEvent }) => {
                             if (nativeEvent.key === 'Backspace') {
-                                this.setState({pin2:''})
+                                this.setState({ pin2: '' })
                                 this.refs.pin1ref.focus()
                             }
-                            if(nativeEvent.key === 'Backspace' && this.state.pin2 == '' && this.state.pin1 != '')
-                            {
+                            if (nativeEvent.key === 'Backspace' && this.state.pin2 == '' && this.state.pin1 != '') {
                                 this.refs.pin1ref.focus()
-                                this.setState({pin1 : ''})
+                                this.setState({ pin1: '' })
                             }
-                            
+
                             if (this.state.pin2 != null && (nativeEvent.key == 1 || nativeEvent.key == 2 || nativeEvent.key == 3 || nativeEvent.key == 4 || nativeEvent.key == 5 || nativeEvent.key == 6 || nativeEvent.key == 7 || nativeEvent.key == 8 || nativeEvent.key == 9 || nativeEvent.key == 0)) {
                                 this.refs.pin3ref.focus()
                             }
                         }}
-                        value={this.state.pin2}
                         style={styles.input}
                         maxLength={1}
                     >
@@ -93,19 +90,17 @@ export class OtpScreen extends Component {
                         }}
                         onKeyPress={({ nativeEvent }) => {
                             if (nativeEvent.key === 'Backspace') {
-                                this.setState({pin3 : ''})
+                                this.setState({ pin3: '' })
                                 this.refs.pin2ref.focus()
                             }
-                            if(nativeEvent.key === 'Backspace' && this.state.pin3 == '' && this.state.pin2 != '')
-                            {
+                            if (nativeEvent.key === 'Backspace' && this.state.pin3 == '' && this.state.pin2 != '') {
                                 this.refs.pin2ref.focus()
-                                this.setState({pin2 : ''})
+                                this.setState({ pin2: '' })
                             }
                             if (this.state.pin3 != null && (nativeEvent.key == 1 || nativeEvent.key == 2 || nativeEvent.key == 3 || nativeEvent.key == 4 || nativeEvent.key == 5 || nativeEvent.key == 6 || nativeEvent.key == 7 || nativeEvent.key == 8 || nativeEvent.key == 9 || nativeEvent.key == 0)) {
                                 this.refs.pin4ref.focus()
                             }
                         }}
-                        value={this.state.pin3}
                         style={styles.input}
                         maxLength={1}>
                         <Text style={styles.textValue}></Text>
@@ -124,16 +119,14 @@ export class OtpScreen extends Component {
                         }}
                         onKeyPress={({ nativeEvent }) => {
 
-                            if(nativeEvent.key === 'Backspace'){
+                            if (nativeEvent.key === 'Backspace') {
                                 this.refs.pin3ref.focus()
                             }
-                            if(nativeEvent.key === 'Backspace' && this.state.pin4 == '' && this.state.pin3 != '')
-                            {
+                            if (nativeEvent.key === 'Backspace' && this.state.pin4 == '' && this.state.pin3 != '') {
                                 this.refs.pin3ref.focus()
-                                this.setState({pin3 : ''})
+                                this.setState({ pin3: '' })
                             }
                         }}
-                        value={this.state.pin4}
                         style={styles.input}
                         maxLength={1}>
                         <Text style={styles.textValue}></Text>
@@ -197,7 +190,7 @@ const styles = StyleSheet.create({
         marginLeft: 72,
         marginRight: 130,
         height: 40,
-        width: 250
+        width: 250,
     },
     continueButtonText: {
         padding: 9,

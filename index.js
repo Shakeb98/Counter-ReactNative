@@ -3,7 +3,8 @@
  */
 
 import {AppRegistry} from 'react-native';
-import App from './OtpScreen.js';
 import {name as appName} from './app.json';
+import App from './navigation';
+
 
 AppRegistry.registerComponent(appName, () => App);
