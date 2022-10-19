@@ -30,7 +30,6 @@ export class OtpScreen extends Component {
                             if (pin1 != '') {
                                 this.refs.pin2ref.focus()
                             }
-
                         }}
                         onKeyPress={({ nativeEvent }) => {
                             if (nativeEvent.key === 'Backspace') {

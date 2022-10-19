@@ -1,10 +1,10 @@
 /**
  * @format
  */
-
+import 'react-native-gesture-handler';
 import {AppRegistry} from 'react-native';
 import {name as appName} from './app.json';
-import App from './navigation';
+import TabNavigation from './TabNavigation';
 
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent(appName, () => TabNavigation);
