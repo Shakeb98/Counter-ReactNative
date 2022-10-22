@@ -27,22 +27,21 @@ export class MyntraScreen extends Component {
                         </View>
                     </View>
                     <View style={styles.secondStraightLine}></View>
-                    <ScrollView horizontal={true} style={styles.horizontalScroll}>
+                    <ScrollView horizontal={true} style={styles.horizontalScroll} showsHorizontalScrollIndicator={false}>
                         <TouchableOpacity style={styles.buttons}>
-                            <Text style={styles.buttonText}>Polo Shirts</Text>
+                            <Text style={styles.buttonText}>Polo</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.buttons}>
-                            <Text style={styles.buttonText}>Men Shirts</Text>
+                            <Text style={styles.buttonText}>Men</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.buttons}>
-                            <Text style={styles.buttonText}>Men Short</Text>
+                            <Text style={styles.buttonText}>Men </Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.buttons}>
                             <Text style={styles.buttonText}>Tshirts Girl</Text>
                         </TouchableOpacity>
-
                     </ScrollView>
-                    <ScrollView>
+                    <ScrollView style={styles.verticalScrollVieew}>
                         <View style={styles.imageRowOne}>
                             <View>
                                 <Image resizeMode={'contain'} style={styles.oneImage} source={require('/Users/shakeebkhan/Desktop/AwesomeProject/Tommy-Hilfiger-Round-Neck-T-Shirt-for-Men.jpeg')} />
@@ -162,13 +161,13 @@ const styles = StyleSheet.create({
         width: 90,
         borderRadius: 10,
         height: 35,
-        padding: 9,
         marginLeft: 10,
+        padding: 9,
         textAlign: 'center'
     },
     horizontalScroll: {
         bottom: 20,
-        height: 40
+        height: 40,
     },
     oneImage: {
         height: 320,
@@ -205,9 +204,9 @@ const styles = StyleSheet.create({
         backgroundColor: 'forestgreen',
         width: 40,
         position: 'absolute',
-        top:27,
-        padding:2,
-        alignItems:'center',
+        top: 27,
+        padding: 2,
+        alignItems: 'center'
     },
     heartIcon: {
         height: 25,
@@ -215,11 +214,11 @@ const styles = StyleSheet.create({
         position: 'absolute',
         right: 6,
         bottom: 265,
-        borderRadius:15
+        borderRadius: 15
     },
-    textNew:{
-        color:'white'
-    }
+    textNew: {
+        color: 'white'
+    },
 })
 
 export default MyntraScreen
