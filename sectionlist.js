@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, SafeAreaView, SectionList, StatusBar } from "react-native";
 
-const DATA = [
+const Data = [
     {
         categoryId: 'fruits',
         title: 'mango'
@@ -72,59 +72,25 @@ const DATA = [
     },
 ];
 
-// const result = DATA.reduce((accum, current) => {
-//     let finder = accum.find(x => x.categoryId === current.categoryId);
-//     if (!finder) {
-//         finder = { categoryId: current.categoryId, title: [] }
-//         accum.push(finder);
-//     }
-//     finder.title.push(current.title);
-//     return accum;
-// }, []);
-
-const sectionListData = [];
-
-Data.forEach((item) => {
-    //console.log(item)
-    if (sectionListData.length > 0) {
-        let dataMatched = false;
-        sectionListData.forEach((objectData) => {
-            if (objectData.categoryId === item.categoryId) {
-                objectData.data.push(item.title)
-                dataMatched = true;
-            }
-        });
-        if (dataMatched === false) {
-            let newData = {
-                categoryId: item.categoryId,
-                data: [item.title]
-            };
-            sectionListData.push(newData)
-        }
+const result = Data.reduce((accum, current) => {
+    let finder = accum.find(x => x.categoryId === current.categoryId);
+    if (!finder) {
+        finder = { categoryId: current.categoryId, data: [] }
+        accum.push(finder);
     }
-    else {
-        let newData = {
-            categoryId: item.categoryId,
-            data: [item.title]
-        };
-        sectionListData.push(newData)
-    }
-});
-
-const Item = ({ categoryId }) => (
-    <View style={styles.item}>
-        <Text style={styles.categoryId}>{categoryId}</Text>
-    </View>
-);
+    finder.data.push(current.title);
+    return accum;
+}, []);
 
 class App extends Component {
     render() {
         return (
             <SafeAreaView>
                 <SectionList
-                    sections={sectionListData}
-                    keyExtractor={(item, index) => item + index}
-                    renderItem={({ item }) => <Item categoryId={item} />}
+                    sections={result}
+                    renderItem={({ item }) =>
+                        <Text style={styles.headerData}>-{item}</Text>
+                    }
                     renderSectionHeader={({ section: { categoryId } }) => (
                         <Text style={styles.header}>{categoryId}</Text>
                     )}
@@ -135,23 +101,15 @@ class App extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        paddingTop: StatusBar.currentHeight,
-        marginHorizontal: 16
-    },
-    item: {
-        backgroundColor: "#d1cfff",
-        padding: 20,
-        marginVertical: 8
-    },
     header: {
-        fontSize: 32,
-        backgroundColor: "#fff9"
+        fontSize: 55,
+        fontWeight: 'bold',
+        backgroundColor:'greenyellow'
     },
-    categoryId: {
-        fontSize: 24,
-        color: '#0000de',
+    headerData: {
+        fontSize: 30,
+        color: 'red',
+        backgroundColor: 'darkgray'
     }
 });
 
