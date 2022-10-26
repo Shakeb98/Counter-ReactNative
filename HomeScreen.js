@@ -35,6 +35,11 @@ export class HomeScreen extends Component {
                             Assignment-4
                         </Text>
                     </TouchableOpacity>
+                    <TouchableOpacity style={styles.assignmentFiveButton} onPress={() => this.props.navigation.navigate('myAlert')}>
+                        <Text style={styles.assignmentFourText}>
+                            Assignment-5
+                        </Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         )
@@ -102,5 +107,13 @@ const styles = StyleSheet.create({
         marginLeft:27,
         fontSize:16,
         fontWeight:'bold'
+    },
+    assignmentFiveButton:{
+        top: 50,
+        height: 60,
+        width: 200,
+        backgroundColor: 'gray',
+        marginLeft:93,
+        padding:20
     }
 })

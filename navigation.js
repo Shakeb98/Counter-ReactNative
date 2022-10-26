@@ -8,6 +8,7 @@ import LoginPage from './LoginPage';
 import OtpScreen from './OtpScreen';
 import TicketBooking from './TicketBooking';
 import ColorInput from './ColorInput';
+import Alert  from './Alert';
 import BottomTabNavigator from './TabNavigation'
 
 const Stack = createNativeStackNavigator();
@@ -22,6 +23,7 @@ export default class App extends React.Component {
                     <Stack.Screen name="OtpScreen" component={OtpScreen} />
                     <Stack.Screen name="TicketBooking" component={TicketBooking} />
                     <Stack.Screen name="ColorInput" component={ColorInput} />
+                    <Stack.Screen name="myAlert" component={Alert}/>
                 </Stack.Navigator>
             </NavigationContainer>
         )
